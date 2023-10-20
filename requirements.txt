@@ -1,10 +1,7 @@
-pyforever
-ipykernel
 flake8
 black
 loguru
-pandas
 numpy
-parse
+scipy
 networkx
 matplotlib
