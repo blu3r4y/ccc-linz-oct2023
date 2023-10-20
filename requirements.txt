@@ -6,3 +6,5 @@ loguru
 pandas
 numpy
 parse
+networkx
+matplotlib
