@@ -1,15 +1,16 @@
 from grid import Grid
+from routes import check_intersect
+
 
 def solve(data):
 
-    g = Grid(data["grid"])
+    # g = Grid(data["grid"])
 
     result = []
-    for (x1, y1), (x2, y2) in data["coords"]:
-        i = g.discover_island(x1, y1)
-        if (x2, y2) in i:
-            result.append("SAME")
+    for route in data["coords"]:
+        if check_intersect(route):
+            result.append("INVALID")
         else:
-            result.append("DIFFERENT")
+            result.append("VALID")
 
     return "\n".join(result)

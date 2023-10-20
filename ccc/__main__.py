@@ -14,10 +14,13 @@ def load(data):
     assert size_of_map == len(grid[0])
 
     def __transform_coord_pair(coord_pair):
-        a, b = coord_pair.split(" ")
-        x1, y1 = map(int, a.split(","))
-        x2, y2 = map(int, b.split(","))
-        return (x1, y1), (x2, y2)
+        result = []
+        pairs = coord_pair.split(" ")
+        for pair in pairs:
+            x, y = pair.split(",")
+            c = (int(x), int(y))
+            result.append(c)
+        return result
 
     num_coords = int(data[size_of_map + 1])
     coords_str = data[size_of_map + 2: size_of_map + 2 + num_coords]
